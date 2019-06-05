@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link, Switch, NavLink } from 'react-router-dom'
+import React from 'react'
+import Home from './pages/Home'
+import Student from './pages/Student'
+import Header from './component7/Header'
+import Footer from './component7/Footer'
+import StudentManager from './component4/StudentManager'
+import StudentModal from './component4/StudentModal'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+ class App extends React.Component {
+  render(){
+    return (
+      <Router>
+      <>
+       <Header />
+          <StudentManager />
+
+        {/* <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/student/:id" component={Student}/>
+          <Route path="/student" component={Student} />
+        </Switch> */}
+        <Footer />
+        </>
+      </Router>
+    )
+  }
 }
-
-export default App;
+export default App
